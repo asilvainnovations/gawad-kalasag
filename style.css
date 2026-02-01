@@ -1,0 +1,93 @@
+/* Apply box sizing to all elements */
+* {
+    /* Include padding and border in element width */
+    box-sizing: border-box;
+}
+/* Body styling */
+body {
+    /* Set font family */
+    font-family: Arial, sans-serif;
+    /* Remove default margin */
+    margin: 0;
+    /* Set background color */
+    background-color: #f4f6f8;
+    /* Set text color */
+    color: #333333;
+}
+/* Application container styling */
+#applicationContainer {
+    /* Set maximum width */
+    max-width: 1200px;
+    /* Center container */
+    margin: auto;
+    /* Apply padding */
+    padding: 20px;
+}
+/* Header section styling */
+#headerSection {
+    /* Set background color */
+    background-color: #003366;
+    /* Set text color */
+    color: #ffffff;
+    /* Apply padding */
+    padding: 20px;
+    /* Center text */
+    text-align: center;
+}
+/* Navigation bar styling */
+#navigationBar ul {
+    /* Remove list styling */
+    list-style: none;
+    /* Remove padding */
+    padding: 0;
+    /* Use flex layout */
+    display: flex;
+    /* Center items */
+    justify-content: center;
+    /* Set background color */
+    background-color: #00509e;
+}
+/* Navigation item styling */
+#navigationBar li {
+    /* Apply margin */
+    margin: 0 15px;
+}
+/* Navigation link styling */
+#navigationBar a {
+    /* Set link color */
+    color: #ffffff;
+    /* Remove underline */
+    text-decoration: none;
+    /* Set font weight */
+    font-weight: bold;
+}
+/* Section styling */
+section {
+    /* Apply margin */
+    margin-top: 30px;
+}
+/* Table styling */
+table {
+    /* Full width table */
+    width: 100%;
+    /* Collapse borders */
+    border-collapse: collapse;
+}
+/* Table header and cell styling */
+th, td {
+    /* Apply border */
+    border: 1px solid #cccccc;
+    /* Apply padding */
+    padding: 10px;
+    /* Align text */
+    text-align: left;
+}
+/* Footer styling */
+#footerSection {
+    /* Center text */
+    text-align: center;
+    /* Apply margin */
+    margin-top: 40px;
+    /* Set font size */
+    font-size: 0.9em;
+}
