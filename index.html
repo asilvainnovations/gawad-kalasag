@@ -337,82 +337,36 @@
             font-size: 1.3rem;
         }
         
-        /* Footer Styles */
-        footer {
-            background: linear-gradient(135deg, var(--dark-text) 0%, #1a1a1a 100%);
-            color: rgba(255, 255, 255, 0.85);
+        /* Official Seal Styles */
+        .official-seal-container {
             text-align: center;
-            padding: 2.5rem 1rem 1.5rem;
-            margin-top: 2rem;
-        }
-        
-        .footer-content {
-            max-width: 800px;
-            margin: 0 auto;
-        }
-        
-        .ndrrmc-logo {
-            font-weight: 700;
-            font-size: 1.8rem;
-            color: var(--accent-gold);
-            margin-bottom: 15px;
-            letter-spacing: -0.5px;
-        }
-        
-        .copyright {
-            margin-top: 15px;
-            font-size: 0.95rem;
-            opacity: 0.9;
-        }
-        
-        .seal-container {
-            text-align: center;
-            margin: 2.5rem 0 1.5rem;
+            margin: 3rem 0 2.5rem;
             position: relative;
         }
         
-        .seal {
-            display: inline-block;
-            width: 120px;
-            height: 120px;
-            background: var(--accent-gold);
+        .official-seal {
+            max-width: 100%;
+            height: auto;
             border-radius: 50%;
-            display: flex;
-            justify-content: center;
-            align-items: center;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.25);
             border: 8px solid var(--primary-blue);
-            position: relative;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.25);
-            margin: 0 auto;
+            background: white;
+            display: inline-block;
+            transition: var(--transition);
         }
         
-        .seal::before {
-            content: "";
-            position: absolute;
-            width: 105%;
-            height: 105%;
-            background: transparent;
-            border: 2px solid var(--accent-gold);
-            border-radius: 50%;
-            top: -50%;
-            left: -50%;
-            transform: translate(50%, 50%);
+        .official-seal:hover {
+            transform: scale(1.03);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
         }
         
-        .seal-text {
-            font-weight: 700;
-            font-size: 0.85rem;
-            text-align: center;
+        .seal-caption {
+            margin-top: 15px;
+            font-weight: 600;
             color: var(--primary-blue);
+            font-size: 1.15rem;
             text-transform: uppercase;
-            letter-spacing: 0.5px;
-            line-height: 1.3;
-        }
-        
-        .seal-text span {
-            display: block;
-            font-size: 1.7rem;
-            margin-top: -3px;
+            letter-spacing: 1px;
         }
         
         /* Responsive Design */
@@ -431,6 +385,9 @@
             }
             h2 {
                 font-size: 1.95rem;
+            }
+            .official-seal {
+                max-width: 85%;
             }
         }
         
@@ -473,15 +430,11 @@
             .importance-grid {
                 grid-template-columns: 1fr;
             }
-            .seal {
-                width: 100px;
-                height: 100px;
+            .official-seal {
+                max-width: 75%;
             }
-            .seal-text {
-                font-size: 0.75rem;
-            }
-            .seal-text span {
-                font-size: 1.4rem;
+            .official-seal-container {
+                margin: 2.5rem 0 2rem;
             }
         }
         
@@ -516,9 +469,8 @@
                 padding: 10px 12px;
                 font-size: 0.95rem;
             }
-            .seal {
-                width: 90px;
-                height: 90px;
+            .official-seal {
+                max-width: 90%;
             }
             footer {
                 padding: 2rem 1rem 1.25rem;
@@ -701,10 +653,9 @@
             </ul>
             <p>Scores are aggregated, and initiatives that meet or exceed thresholds are recognized with the <strong>Gawad Kalasag Seal of Excellence</strong> or special awards.</p>
             
-            <div class="seal-container">
-                <div class="seal">
-                    <div class="seal-text">Gawad<br><span>Kalasag</span><br>Seal of<br>Excellence</div>
-                </div>
+            <div class="official-seal-container">
+                <img src="https://trecemartirescity.gov.ph/wp-content/uploads/2024/07/gawad-kalasag_2-844x1024.png" alt="Official Gawad Kalasag Seal of Excellence" class="official-seal">
+                <div class="seal-caption">Gawad Kalasag Seal of Excellence</div>
             </div>
         </section>
         
@@ -774,6 +725,12 @@
                     this.style.transform = '';
                 });
             });
+            
+            // Add lazy loading to seal image
+            const sealImg = document.querySelector('.official-seal');
+            if ('loading' in HTMLImageElement.prototype) {
+                sealImg.setAttribute('loading', 'lazy');
+            }
         });
     </script>
 </body>
